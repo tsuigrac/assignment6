@@ -4,6 +4,8 @@ package complexity;
 public class Program {
 
   public static void main(String[] args) {
+    // Problem 2 Testing
+    System.out.println(fastModExp(4, 13, 13));
 
     // Problem 3 Testing
     /*
@@ -16,21 +18,19 @@ public class Program {
      * String[] concat = new String[] {"hello", "world", "!"};
      * System.out.println(concatAndReplicateAll(concat, 3));
      */
-    
-    //Problem 5 Testing
-    int[] arr1 = new int[] {0, 1, 2, 3, 4, 5, 6};
-    int[] arr2 = new int[] {3, 4, 5};
-    int[] inter = interleave(arr1, arr2);
-    for(int val: inter) {
-      System.out.print(val+ " ");
-    }
+
+    // Problem 5 Testing
+    /*
+     * int[] arr1 = new int[] {0, 1, 2, 3, 4, 5, 6}; int[] arr2 = new int[] {3, 4, 5}; int[] inter =
+     * interleave(arr1, arr2); for (int val : inter) { System.out.print(val + " "); }
+     */
 
   }
 
   // Problem 1
-  public static boolean contains(double[] arr, double eps, double d1) {
-    for (double val : arr) {
-      if (val < (d1 + eps) && val > (d1 - eps)) {
+  public static boolean contains(double[] dubs, double eps, double d) {
+    for (double val : dubs) {
+      if (Math.abs(val - d) < eps) {
         return true;
       }
     }
@@ -38,20 +38,15 @@ public class Program {
   }
 
 
-  // Problem 2 (bugs)
-  public static int fastModExp(int x, int y, int m) {
-    if (y % 2 == 0) {
-      return exp(((x * x) % m), y / 2);
-    } else {
-      return x * fastModExp(x, y - 1, m);
-    }
-  }
+  // Problem 2
 
-  public static int exp(int x, int y) {
-    if (y == 1) {
-      return x;
+  public static int fastModExp(int x, int y, int m) {
+    if (y == 0) {
+      return 1;
+    } else if (y % 2 == 0) {
+      return fastModExp((x * x) % m, y / 2, m);
     } else {
-      return x * exp(x, y - 1);
+      return (x * fastModExp(x, y - 1, m)) % m;
     }
   }
 
@@ -110,7 +105,7 @@ public class Program {
         result[count++] = arr1[i];
         result[count++] = arr2[i];
       }
-    }//for
+    } // for
     return result;
   }
 
