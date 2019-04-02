@@ -4,8 +4,14 @@ package complexity;
 public class Program {
 
   public static void main(String[] args) {
+    // Problem 1 Testing
+    /*
+     * double[] arr = new double[] {1, 3, 4, 2, 2.1,5.7, 10.9}; System.out.println(contains(arr,
+     * 0.2, 2.4));
+     */
+
     // Problem 2 Testing
-    System.out.println(fastModExp(4, 13, 13));
+    // System.out.println(fastModExp(4, 13, 13));
 
     // Problem 3 Testing
     /*
@@ -21,8 +27,9 @@ public class Program {
 
     // Problem 5 Testing
     /*
-     * int[] arr1 = new int[] {0, 1, 2, 3, 4, 5, 6}; int[] arr2 = new int[] {3, 4, 5}; int[] inter =
-     * interleave(arr1, arr2); for (int val : inter) { System.out.print(val + " "); }
+     * int[] arr1 = new int[] {0, 1, 2, 3, 4, 5, 6}; 
+     * int[] arr2 = new int[] {3, 4, 5}; 
+     * int[] inter = interleave(arr1, arr2); for (int val : inter) { System.out.print(val + " "); }
      */
 
   }
@@ -39,7 +46,6 @@ public class Program {
 
 
   // Problem 2
-
   public static int fastModExp(int x, int y, int m) {
     if (y == 0) {
       return 1;
