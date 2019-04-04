@@ -93,6 +93,6 @@ T(n) = 2n
 since the input arrays would take up n space and the final array would also take up n space for a total of 2n space. Then T is in O(n) with c = 2 and x_0 = 1. This is linear because as the input arrays increase linearly, the space needed for the final array also increases linearly so the total thing increases linearly. 
 
 
-I analyzed the previous problems' functions and found that the space complexity is in the same order for Big-O as the time complexity. Therefore, it seems that if we know the space complexity we can put the same bound on time complexity.
+I analyzed the previous problems' functions and found that the space complexity is in the same order for Big-O as the time complexity. However, the space complexity is always going to be less than or equal to the time complexity because each spot in the memory is altered/used at least one time during each run of the program. Therefore, the Big-O will be the same for both time and space complexity, but space complexity will be bounded on top by time complexity. 
 
 
