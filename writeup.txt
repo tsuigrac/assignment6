@@ -1,0 +1,98 @@
+Complexity Lab
+By: Grace Tsui
+CSC 207 01
+
+Problem 1: Contains
+
+The worst-case complexity of this program is when the array does not contain the value specified. In this case, the program would have to go through every single value of the array to compare it to the specified value before returning false. 
+
+We count the number of array accesses to the input array 'dubs'. The input of our model is n = the length of 'dubs'. Then our model is
+
+T(n) = n
+
+for the worst-case situation, because the number of array accesses would be the length of the input array (which is n).  
+
+In Big-O notation we have that T is in O(n). We have c = 1 and x_0 = 1 because we know that n <= n for all values n>=1.
+
+
+
+
+Problem 2: Fast Exponentiation
+
+The set of operations we count is the number of times % is called in the function as a part of the fastModExp method (I don't count the % in testing whether the y is even or odd). The input of our model is n = y, where y is the exponent provided in the parameter. we assume that the input y is a power of two. Then we have that 
+
+T(n) = 1 + T(n/2)        
+     = 1 + 1 + T(n/4) = 2 + T(n/4)
+...
+T(n) = k + T( [1/2]^k * n)
+
+Our base case is
+T(1) = 1
+
+When k = log_2(n), we get
+
+T(n) = log_2(n) + T(1), or 
+T(n) = log_2(n) + 1.
+
+for our final model.
+
+Then we have that the T is in O(log_2(n)), with c = 2 and x_0 = 2 since for all n>=2, 2log_2(n) >= log_2(n).
+
+
+
+
+Problem 3: All Pairs
+ 
+We count the number of times the program access the final array that is returned in the end. This array is accessed every time the program adds a new value to this array. The input of the model is n = the size of the original array arr. Then the model is 
+
+T(n) = n^2
+
+because each element in the original array is accessed arr.length number of times, so the total number of times the final array is written into is arr.length^2. 
+
+Then we have that T is in O(n^2), and c = 1 and x_0 = 1 because 
+n^2 <= n^2
+for all n>=1.
+
+
+
+Problem 4: Concat-Replicate
+
+We count the number of times the program concatenates a string to another string. The input is m = the length of the original array. Then we have 
+
+T(m) = n + T(m-1)
+
+where n is the value in the parameter representing how many times each string is replicated.
+
+Then the total model is
+
+T(m) = m * n
+
+assuming that appending strings takes a constant amount of time. This would mean that T is in O(n). The program is linear because we concatenate each element a constant number of times, as specified by the parameter, and so the program will increase linearly as the array length increases linearly.
+
+My analysis would change if Java string concatenation of two strings of lengths n and m is O(n+m). In this case, the program time-complexity would increase exponentially because the string concatenation would increase by greater and greater values as more strings are concatenated. The worst case is when all strings concatenated are the same length, and the model would then be
+
+T(n) = n + 2n + 4n + 8n + ....
+
+which would be in O(n^2). My runtime would also be O(n^2) and increase exponentially instead of linearly.
+
+
+
+
+Problem 5: Interleave
+
+We count the number of array access to the resulting array that is returned. This array is accessed each time a new element is added to it. The input of the model is the sum of the lengths of the array.Then we would have
+
+T(n) = n
+
+since we have to take each element from each array and write it into the final array. Then we have T is in O(n), as it would increase linearly with an increase in the input array lengths since each element in each input array is written once into the final array. We also have c = 1 and x_0 = 1.
+
+For the space complexity, the input of the model is the sum of the length of the input arrays again. Then our model is
+
+T(n) = 2n
+
+since the input arrays would take up n space and the final array would also take up n space for a total of 2n space. Then T is in O(n) with c = 2 and x_0 = 1. This is linear because as the input arrays increase linearly, the space needed for the final array also increases linearly so the total thing increases linearly. 
+
+
+I analyzed the previous problems' functions and found that the space complexity is in the same order for Big-O as the time complexity. Therefore, it seems that if we know the space complexity we can put the same bound on time complexity.
+
+
