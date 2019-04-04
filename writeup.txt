@@ -71,7 +71,7 @@ assuming that appending strings takes a constant amount of time. This would mean
 
 My analysis would change if Java string concatenation of two strings of lengths n and m is O(n+m). In this case, the program time-complexity would increase exponentially because the string concatenation would increase by greater and greater values as more strings are concatenated. The worst case is when all strings concatenated are the same length, and the model would then be
 
-T(n) = n + 2n + 4n + 8n + ....
+T(n) = n + 2n + 3n + 4n + ....
 
 which would be in O(n^2). My runtime would also be O(n^2) and increase exponentially instead of linearly.
 
