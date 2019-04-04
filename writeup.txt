@@ -6,7 +6,7 @@ Problem 1: Contains
 
 The worst-case complexity of this program is when the array does not contain the value specified. In this case, the program would have to go through every single value of the array to compare it to the specified value before returning false. 
 
-We count the number of array accesses to the input array 'dubs'. The input of our model is n = the length of 'dubs'. Then our model is
+We count the number of array accesses to the input array 'dubs'. The input of our model is n = dubs.length. Then our model is
 
 T(n) = n
 
