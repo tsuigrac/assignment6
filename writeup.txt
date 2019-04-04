@@ -1,4 +1,4 @@
-Complexity Lab
+Complexity Assignment
 By: Grace Tsui
 CSC 207 01
 
